@@ -18,7 +18,7 @@ func TestAddDrawnBall(t *testing.T) {
 	t.Run("should add a ball to the drawn balls", func(t *testing.T) {
 		sut := NewAddDrawnBallUseCase()
 		for _, ball := range referenceBalls {
-			sut.AddDrawnBall(ball)
+			sut.Exec(ball)
 			assert.Contains(t, drawnBalls[ball.Letter], ball.Number)
 		}
 	})

@@ -20,7 +20,7 @@ func TestGetRandomBallUseCase(t *testing.T) {
 		copy(balls, referenceBalls)
 
 		sut := NewGetRandomBallUseCase()
-		ball, newBalls := sut.GetRandomBall(balls)
+		ball, newBalls := sut.Exec(balls)
 
 		assert.Equal(t, len(referenceBalls)-1, len(newBalls))
 		assert.Contains(t, referenceBalls, ball)

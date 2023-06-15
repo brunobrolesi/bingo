@@ -9,7 +9,7 @@ import (
 func TestStartUseCase(t *testing.T) {
 	t.Run("should return all game balls and correct letters", func(t *testing.T) {
 		sut := NewStartGameUseCase()
-		balls := sut.Start()
+		balls := sut.Exec()
 
 		assert.Equal(t, 75, len(balls))
 		for i := 1; i <= 15; i++ {

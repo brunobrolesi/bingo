@@ -8,7 +8,7 @@ import (
 )
 
 type GetRandomBallUseCase interface {
-	GetRandomBall(balls model.Balls) (model.Ball, model.Balls)
+	Exec(balls model.Balls) (model.Ball, model.Balls)
 }
 
 type getRandomBall struct{}
@@ -17,7 +17,7 @@ func NewGetRandomBallUseCase() GetRandomBallUseCase {
 	return &getRandomBall{}
 }
 
-func (g *getRandomBall) GetRandomBall(balls model.Balls) (model.Ball, model.Balls) {
+func (g *getRandomBall) Exec(balls model.Balls) (model.Ball, model.Balls) {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	index := r.Intn(len(balls))
 	randomBall := balls[index]

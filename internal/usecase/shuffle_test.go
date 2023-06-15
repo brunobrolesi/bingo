@@ -18,7 +18,7 @@ func TestShuffleUseCase(t *testing.T) {
 	t.Run("should shuffle balls", func(t *testing.T) {
 		balls := make(model.Balls, len(referenceBalls))
 		copy(balls, referenceBalls)
-		shuffledBalls := NewShuffleUseCase().Shuffle(balls)
+		shuffledBalls := NewShuffleUseCase().Exec(balls)
 
 		assert.Equal(t, len(referenceBalls), len(shuffledBalls))
 		assert.NotEqual(t, referenceBalls, shuffledBalls)

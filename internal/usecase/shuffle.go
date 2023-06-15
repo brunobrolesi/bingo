@@ -8,7 +8,7 @@ import (
 )
 
 type ShuffleUseCase interface {
-	Shuffle(balls model.Balls) model.Balls
+	Exec(balls model.Balls) model.Balls
 }
 
 type shuffleUseCase struct{}
@@ -17,7 +17,7 @@ func NewShuffleUseCase() ShuffleUseCase {
 	return &shuffleUseCase{}
 }
 
-func (s *shuffleUseCase) Shuffle(balls model.Balls) model.Balls {
+func (s *shuffleUseCase) Exec(balls model.Balls) model.Balls {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	r.Shuffle(len(balls), func(i, j int) { balls[i], balls[j] = balls[j], balls[i] })
 

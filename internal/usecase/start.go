@@ -3,7 +3,7 @@ package usecase
 import "github.com/brunobrolesi/bingo/internal/model"
 
 type StartGameUseCase interface {
-	Start() model.Balls
+	Exec() model.Balls
 }
 
 type startGame struct{}
@@ -12,7 +12,7 @@ func NewStartGameUseCase() StartGameUseCase {
 	return &startGame{}
 }
 
-func (s *startGame) Start() model.Balls {
+func (s *startGame) Exec() model.Balls {
 	balls := model.Balls{}
 	for i := 1; i <= 15; i++ {
 		ball := model.Ball{Number: i, Letter: "B"}
