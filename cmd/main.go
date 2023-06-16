@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/brunobrolesi/bingo/internal/app"
+)
 
 func main() {
-	fmt.Println("Iniciando o Bingo!!!!")
+	app.Start()
 }

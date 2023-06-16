@@ -10,5 +10,5 @@ type Ball struct {
 type Balls []Ball
 
 func (b *Ball) String() string {
-	return b.Letter + "-" + fmt.Sprint(b.Number)
+	return fmt.Sprintf("Letra: %s - Número: %d", b.Letter, b.Number)
 }
