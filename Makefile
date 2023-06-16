@@ -54,19 +54,19 @@ test-cover:
 .PHONY: build-windows
 build-windows:
 	@echo "=> Building for Windows"
-	@GOOS=windows GOARCH=amd64 go build -o build/bingo.exe cmd/main.go
+	@GOOS=windows GOARCH=amd64 go build -o bin/bingo.exe cmd/main.go
 
 .PHONY: build-macos-intel
 build-macos-intel:
 	@echo "=> Building for MacOS Intel"
-	@GOOS=darwin GOARCH=amd64 go build -o build/bingo cmd/main.go
+	@GOOS=darwin GOARCH=amd64 go build -o bin/bingo cmd/main.go
 
 .PHONY: build-macos-arm
 build-macos-arm:
 	@echo "=> Building for MacOS ARM"
-	@GOOS=darwin GOARCH=arm64 go build -o build/bingo cmd/main.go
+	@GOOS=darwin GOARCH=arm64 go build -o bin/bingo cmd/main.go
 
 .PHONY: build-linux
 build-linux:
 	@echo "=> Building for Linux"
-	@GOOS=linux GOARCH=amd64 go build -o build/bingo cmd/main.go
+	@GOOS=linux GOARCH=amd64 go build -o bin/bingo cmd/main.go
